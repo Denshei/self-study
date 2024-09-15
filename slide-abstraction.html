@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abstraction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Colores de fondo y texto en tonos verdes pastel */
+    .full-height {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #e8f5e9;
+      /* Verde pastel claro */
+    }
+
+    .header {
+      width: 100%;
+      background-color: #a5d6a7;
+      /* Verde pastel más claro */
+      color: #2e7d32;
+      /* Verde más oscuro para el texto */
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .gallery-container {
+      max-width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .gallery-row {
+      margin-bottom: 30px;
+    }
+
+    .gallery-item img {
+      width: 60%;
+      height: auto;
+      border-radius: 10px;
+      transition: opacity 0.5s ease-in-out;
+      /* Agregar transición para las imágenes */
+    }
+
+    .gallery-item p {
+      text-align: center;
+      font-size: 1.2rem;
+      font-style: italic;
+      font-family: 'Arial', sans-serif;
+      margin-top: 10px;
+      color: #2e7d32;
+      /* Verde más oscuro para el texto */
+    }
+
+    .btn-back {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .modal-content img {
+      max-width: 80%;
+    }
+
+    /* Animaciones de fade in y fade out */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    .fade-out {
+      opacity: 1;
+      animation: fadeOut 2s ease-in-out forwards;
+    }
+  </style>
+</head>
+
+<body class="full-height">
+  <header class="header">
+    Examples of Abstraction
+  </header>
+
+  <div class="container gallery-container">
+    <div class="row gallery-row">
+      <div class="col-4 gallery-item" data-bs-toggle="modal" data-bs-target="#modal1">
+        <img src="https://img.freepik.com/vector-premium/coche-dibujos-animados-tapa-azul-fondo-blanco_697880-25744.jpg"
+          alt="Image 1" class="fade-in">
+        <p>Car</p>
+      </div>
+      <div class="col-4 gallery-item" data-bs-toggle="modal" data-bs-target="#modal2">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/010/890/613/non_2x/businessman-using-atm-machine-design-character-on-white-background-free-vector.jpg"
+          alt="Image 2" class="fade-in">
+        <p>ATM</p>
+      </div>
+      <div class="col-4 gallery-item" data-bs-toggle="modal" data-bs-target="#modal3">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/016/130/422/non_2x/smartphone-blank-screen-icon-in-comic-style-mobile-phone-cartoon-illustration-on-white-isolated-background-telephone-splash-effect-business-concept-vector.jpg"
+          alt="Image 3" class="fade-in">
+        <p>Smartphone</p>
+      </div>
+    </div>
+    <div class="row gallery-row">
+      <div class="col-4 gallery-item" data-bs-toggle="modal" data-bs-target="#modal4">
+        <img src="https://img.freepik.com/vector-premium/puerta-elevador_592324-8400.jpg" alt="Image 4" class="fade-in">
+        <p>Elevator</p>
+      </div>
+      <div class="col-4 gallery-item" data-bs-toggle="modal" data-bs-target="#modal5">
+        <img
+          src="https://img.freepik.com/vector-premium/icono-camara-fotos-estilo-dibujos-animados-aislado-sobre-fondo-blanco-componentes-simbolo-sesion-fotos_96318-14614.jpg"
+          alt="Image 5" class="fade-in">
+        <p>Camera</p>
+      </div>
+      <div class="col-4 gallery-item" data-bs-toggle="modal" data-bs-target="#modal6">
+        <img
+          src="https://img.freepik.com/vector-premium/maquina-expendedora-botellas-agua-linea-plana-color-objeto-vectorial-aislado-vendedor-bebidas-imagen-clip-art-editable-fondo-blanco-ilustracion-lugar-dibujos-animados-contorno-simple-diseno-web_151150-21003.jpg"
+          alt="Image 6" class="fade-in">
+        <p>Vending Machine</p>
+      </div>
+    </div>
+    <div class="btn-back">
+      <button class="btn btn-success" onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+  </div>
+
+  <!-- Modales -->
+  <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel1">Car</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Think about a car: when you drive it, you only care about turning it on, accelerating, or braking. You
+            don't need to know how the engine works or how the fuel is sent to the system. The important thing is that
+            you can drive it from one place to another.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel2">ATM</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>An ATM is simple from the user's perspective. You can withdraw money, check your balance, or make a
+            deposit, but you don't need to know how it connects to the bank or processes the information. You only see
+            the buttons you need to press and the money you receive.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel3">Smartphone</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>We all use our smartphones to make calls, send messages, or take pictures. But no one needs to understand
+            how the touchscreen works or how mobile data is managed. We only care that we can communicate with others
+            quickly and easily.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modalLabel4" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel4">Elevator</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>An elevator is easy to use: you press a button, and it takes you up or down. You don't have to think about
+            the cables, pulleys, or motors that make it work. It just takes you to your desired floor without
+            complications.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="modalLabel5" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel5">Camera</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>When you take a photo, you just press a button. You don't need to know how the lens adjusts the focus or
+            how the image is processed digitally. All you care about is capturing the moment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="modalLabel6" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel6">Vending Machine</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>To get a snack or drink from a vending machine, you insert money and press a button. You don’t have to
+            worry about how the machine recognizes the money or delivers the item. You simply receive what you paid for.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.gallery-item img').forEach((img) => {
+      img.addEventListener('mouseenter', () => {
+        img.classList.add('fade-out'); // Aplica fade out al pasar el mouse
+      });
+      img.addEventListener('mouseleave', () => {
+        img.classList.remove('fade-out'); // Remueve fade out al dejar de pasar el mouse
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

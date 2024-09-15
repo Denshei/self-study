@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism in OOP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-image: url(Pin\ on\ patterns_\ _\ Original\ iphone\ wallpaper\,\ Yellow\ wallpaper\,\ Cow\ print\ wallpaper.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Asegura que el body ocupe al menos el alto de la ventana */
+        }
+
+        main {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Fondo blanco semi-transparente para contraste */
+            border-radius: 10px;
+            width: 90%;
+            /* Ajusta el ancho según sea necesario */
+            max-width: 1200px;
+            /* Opcional: establece un ancho máximo para el contenido */
+        }
+
+        header {
+            background: #f2e6b1;
+            /* Amarillo pastel más oscuro */
+            color: black;
+            padding: 8px;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 5px;
+        }
+
+        .info-button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            overflow: hidden;
+            /* Evita el desbordamiento de los botones */
+        }
+
+        .info-button,
+        #botonMenu {
+            background: #f2e6b1;
+            /* Amarillo pastel más oscuro */
+            color: black;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 15px;
+            font-size: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+            width: 700px;
+            /* Ajusta el ancho según sea necesario */
+            text-align: center;
+            display: block;
+            margin: 5px auto;
+            /* Espacio entre botones y centrado */
+        }
+
+        #botonMenu {
+            font-size: 20px;
+            width: 680px;
+            text-decoration: none;
+            /* Asegúrate de que el ancho sea igual al de los otros botones */
+        }
+
+        .info-button:hover,
+        #botonMenu:hover {
+            background: #e2c02b;
+            /* Amarillo oscuro */
+            color: black;
+            transform: scale(1.05);
+        }
+
+        .info-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            padding: 10px;
+            background-color: #fff9e6;
+            /* Amarillo pastel muy claro */
+            border: 1px solid #ddd;
+            border-radius: 9px;
+            color: black;
+            text-align: center;
+        }
+
+        .info-content.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .info-content img {
+            display: block;
+            margin: 0 auto;
+            /* Centra la imagen horizontalmente */
+            max-width: 100%;
+            /* Evita que la imagen sea más ancha que su contenedor */
+        }
+
+        h2 {
+            color: black;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Polymorphism in Object-Oriented Programming</h1>
+    </header>
+    <main>
+        <section id="introduction">
+            <div class="info-button-group">
+                <button class="info-button" onclick="toggleInfo('introduction-content')">Introduction</button>
+            </div>
+            <div id="introduction-content" class="info-content">
+                <p>Polymorphism is a concept in object-oriented programming that allows one interface to be used for a
+                    general class of actions. Essentially, it allows different objects to respond to the same message
+                    (or function) in their own way. This makes programming more flexible and reusable.</p>
+                <img width="550px" src="https://miro.medium.com/v2/resize:fit:638/1*cFSJ95jyw-ACiWaIRxAbbg.jpeg"
+                    alt="Example Image 1" />
+            </div>
+        </section>
+        <section id="how-to-use">
+            <div class="info-button-group">
+                <button class="info-button" onclick="toggleInfo('how-to-use-content')">How to Use Polymorphism</button>
+            </div>
+            <div id="how-to-use-content" class="info-content">
+                <h2>1. Define a Common Behavior</h2>
+                <p>In polymorphism, different objects are made to behave in a similar way. For example, different shapes
+                    (like circles and rectangles) can be drawn, even though they are different types of objects. The key
+                    is to define a common behavior that all the objects share.</p>
+                <img width="350px" src="https://th.bing.com/th/id/OIP.BCu1bb_5CB9f6aKbo0RNdwHaHa?rs=1&pid=ImgDetMain"
+                    alt="Example Image 2" />
+                <p>In this case these figures are DRAWN despite being different objects</p>
+                <br>
+                <h2>2. Apply the Common Behavior</h2>
+                <p>Once the behavior is defined, each object can perform this action in its own way. A circle will be
+                    drawn differently from a rectangle, but both will perform the same "drawing" action.</p>
+                <img width="350px" src="https://th.bing.com/th/id/OIP.ptGt3uJUTBFp5lrRcnFkeQHaId?rs=1&pid=ImgDetMain"
+                    alt="Example Image 3" />
+                <p>Here we can see how coming from vehicles we can derive common functions, for example moving</p>
+            </div>
+        </section>
+        <section id="examples">
+            <div class="info-button-group">
+                <button class="info-button" onclick="toggleInfo('examples-content')">Practical Examples</button>
+            </div>
+            <div id="examples-content" class="info-content">
+                <h2>1. Example: Graphic Design Tool</h2>
+                <p>In a graphic design tool, you might have several different types of shapes, like circles, rectangles,
+                    and triangles. Even though they are different shapes, you can treat them all as shapes and ask them
+                    to perform the same action, like drawing themselves on the screen.</p>
+                <img width="350px"
+                    src="https://img.freepik.com/vector-premium/vector-imagen-varios-bocetos-objetos-geometricos_615502-150.jpg"
+                    alt="Graphic Design Example" />
+
+                <h2>2. Example: Sorting Objects</h2>
+                <p>Another practical example is sorting objects. Even if you have different types of data (like numbers,
+                    letters, or words), you can sort them because they all share a common behavior: they can be ordered.
+                </p>
+                <img width="550px" src="https://i.pinimg.com/originals/7c/cb/3e/7ccb3ef1cae00ecf465dfa6698faecd2.jpg"
+                    alt="Sorting Example" />
+            </div>
+        </section>
+        <section id="best-practices">
+            <div class="info-button-group">
+                <button class="info-button" onclick="toggleInfo('best-practices-content')">Best Practices</button>
+            </div>
+            <div id="best-practices-content" class="info-content">
+                <h2>1. Keep Behavior Consistent</h2>
+                <p>Ensure that the behavior you are using polymorphism for is consistent across all objects. This
+                    consistency helps in maintaining clarity in the code and makes the system more reliable.</p>
+
+                <h2>2. Use Clear Definitions</h2>
+                <p>Always clearly define what the shared behavior is. This makes it easier for future developers or
+                    users to understand how different objects are expected to behave.</p>
+                <img src="https://www.guru99.com/images/2/062920_1112_CPolymorphi1.png" alt="Best Practices Example" />
+            </div>
+        </section>
+        <a id="botonMenu" href="index.html">Back to Home</a>
+    </main>
+    <script>
+        function toggleInfo(contentId) {
+            const content = document.getElementById(contentId);
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                setTimeout(() => {
+                    content.style.display = 'none';
+                }, 500); // El tiempo debe coincidir con la duración de la transición
+            } else {
+                content.style.display = 'block';
+                setTimeout(() => {
+                    content.classList.add('show');
+                }, 10); // Un pequeño retraso para permitir el cambio de display
+            }
+        }
+    </script>
+</body>
+
+</html>

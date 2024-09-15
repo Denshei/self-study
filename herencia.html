@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance in Object Oriented Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f0f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffcbdb;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 3px solid #ff9ab5;
+        }
+
+        main {
+            padding: 1rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .concept {
+            background-color: #fff;
+            border: 1px solid #ffcbdb;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .concept:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .concept img {
+            width: 120px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #ffcbdb;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff9ab5;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #ffcbdb;
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+            border-top: 3px solid #ff9ab5;
+        }
+
+        .description {
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transition: opacity 0.3s ease, height 0.3s ease;
+        }
+
+        .description.show {
+            opacity: 1;
+            height: auto;
+        }
+
+        h2 {
+            margin-top: 0;
+            cursor: pointer;
+        }
+
+        p {
+            margin: 0.5rem 0;
+        }
+
+        code {
+            background-color: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .example-code {
+            background-color: #f1f1f1;
+            border-left: 4px solid #ff9ab5;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .example-code pre {
+            margin: 0;
+            font-family: monospace;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .output {
+            font-family: monospace;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-top: 1rem;
+            min-height: 50px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+
+        /* Animaciones */
+        .animation-container {
+            text-align: center;
+            position: relative;
+            margin: 1rem 0;
+        }
+
+        .animation-container img {
+            max-width: 150px;
+            height: auto;
+            animation: bounce 1s infinite;
+        }
+
+        .animation-container img.cat {
+            animation: meow 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes meow {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Inheritance Concepts in Object Oriented Programming</h1>
+    </header>
+    <main>
+        <section class="concept">
+            <h2 onclick="toggleDescription('superclase-subclase')">Superclass and Subclass</h2>
+            <div class="image-container">
+                <img src="https://cruzado.info/tutojava/img/Image4.gif" alt="Superclase y Subclase">
+            </div>
+            <div id="superclase-subclase" class="description">
+                <p>
+                    The <strong>superclass</strong> It is the base class from which other classes are derived.
+                    The <strong>subclass</strong> inherits attributes and methods from the superclass and can extend or
+                    modify its behavior.
+                </p>
+                <p>
+                    <strong>Example:</strong> If we have a class <code>Animal</code> as a superclass,
+                    a subclass <code>Dog</code> can inherit from <code>Animal</code> and add specific methods such as
+                    <code>bark()</code>.
+                </p>
+                <div class="example-code">
+                    <pre><code>class Animal {
+                        constructor(name) {
+                            this.name = name;
+                            }
+                            makeSound() {
+                            console.log('Generic Sound');
+                            }
+                            }
+                            
+                            class Dog extends Animal {
+                            bark() {
+                            console.log('Woof');
+                            }
+}</code></pre>
+                </div>
+                <div class="animation-container">
+                    <img src="https://www.21-draw.com/wp-content/uploads/2023/11/add-shadows-e1700118715162-1024x846.jpg"
+                        alt="Perro Animado">
+                </div>
+                <button onclick="runSuperclaseSubclase()">See Example</button>
+                <div id="output-superclase-subclase" class="output"></div>
+            </div>
+        </section>
+
+        <section class="concept">
+            <h2 onclick="toggleDescription('reutilizacion-codigo')">Code Reuse</h2>
+            <div class="image-container">
+                <img src="data:image/png;base64,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"
+                    alt="Reutilización de Código">
+            </div>
+            <div id="reutilizacion-codigo" class="description">
+                <p>
+                    <strong>Code reuse</strong> is one of the main advantages of inheritance.
+                    It allows subclasses to use methods and attributes of the superclass, avoiding duplication and
+                    making code maintenance easier.
+                </p>
+                <p>
+                    <strong>Example:</strong> If <code>Animal</code> has a <code>makeSound</code> method,
+                    any subclass such as <code>Cat</code> or <code>Dog</code> can use this method directly.
+                </p>
+                <div class="example-code">
+                    <pre><code>class Animal {
+                        makeSound() {
+                        console.log('Animal Sound');
+                        }
+                        }
+                        
+                        class Cat extends Animal {
+                        // Reuses the makeSound method
+                        }
+                        
+                        const myCat = new Cat();
+                        myCat.makeSound(); // Prints: Animal Sound</code></pre>
+                </div>
+                <div class="animation-container">
+                    <img class="cat"
+                        src="https://thumbs.dreamstime.com/b/ni%C3%B1os-simples-dibujos-de-un-gato-lindo-sobre-fondo-blanco-con-representado-en-sencillo-estilo-dibujo-infantil-el-no-tiene-284909132.jpg"
+                        alt="Gato Animado">
+                </div>
+                <button onclick="runReutilizacionCodigo()">See Example</button>
+                <div id="output-reutilizacion-codigo" class="output"></div>
+            </div>
+        </section>
+
+        <section class="concept">
+            <h2 onclick="toggleDescription('sobrescritura-metodos')">Method Overrides</h2>
+            <div class="image-container">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDN2TNiWX4kedGebAJV6XsPUKa16KXqvqj8DQfR46ObR5AKtbSxgHZ6dj8JvkgjwbCeIRUPVqUxDeurEe1D67pkR9DVHXppH2xocQ9gfg7r1WHNVWuVZrVsAWD13z7Jn4g023rCVCiSzjf/s400/1.png"
+                    alt="Sobrescritura de Métodos">
+            </div>
+            <div id="sobrescritura-metodos" class="description">
+                <p>
+                    <strong>Method overriding</strong> allows a subclass to provide a specific implementation of a
+                    method that is already defined in the superclass.
+                </p>
+                <p>
+                    <strong>Example:</strong> If <code>Animal</code> has a method <code>makeSound</code>,
+                    the subclass <code>Dog</code> can override this method to make the dog make a bark instead of a
+                    generic sound.
+                </p>
+                <div class="example-code">
+                    <pre><code>class Animal {
+makeSound() {
+console.log('Generic sound');
+    }
+}
+
+class Dog extends Animal {
+    makeSound() {
+    console.log('Woof');
+    }
+    }
+    
+    const myDog = new Dog();
+    myDog.makeSound(); // Prints: Woof</code></pre>
+                </div>
+                <div class="animation-container">
+                    <img src="https://png.pngtree.com/png-clipart/20230405/original/pngtree-puppy-sticker-dog-cartoon-illustration-png-image_9026303.png"
+                        alt="Perro Animado">
+                </div>
+                <button onclick="runSobrescrituraMetodos()">See Example</button>
+                <div id="output-sobrescritura-metodos" class="output"></div>
+            </div>
+        </section>
+        <div class="back-to-top">
+            <button><a href="index.html" style="text-decoration: none; color: black;">Back to home</a></button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 POO</p>
+    </footer>
+    <script>
+        function toggleDescription(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('show');
+        }
+
+        function runSuperclaseSubclase() {
+            const output = document.getElementById('output-superclase-subclase');
+            output.textContent = ''; // Limpiar salida anterior
+
+            class Animal {
+                constructor(nombre) {
+                    this.nombre = nombre;
+                }
+                hacerSonido() {
+                    output.textContent += 'Generic sound\n';
+                }
+            }
+
+            class Perro extends Animal {
+                ladrar() {
+                    output.textContent += 'Wow\n';
+                }
+            }
+
+            const animal = new Animal('Rex');
+            const perro = new Perro('Fido');
+            output.textContent += `Animal: ${animal.nombre}\n`;
+            output.textContent += `Animal sound: `;
+            animal.hacerSonido();
+            output.textContent += `\nPerro: ${perro.nombre}\n`;
+            output.textContent += `Dog Sound: `;
+            perro.hacerSonido();
+            perro.ladrar();
+        }
+
+        function runReutilizacionCodigo() {
+            const output = document.getElementById('output-reutilizacion-codigo');
+            output.textContent = ''; // Limpiar salida anterior
+
+            class Animal {
+                hacerSonido() {
+                    output.textContent += 'Animal sound\n';
+                }
+            }
+
+            class Gato extends Animal {
+                // Reutiliza el método hacerSonido
+            }
+
+            const gato = new Gato();
+            output.textContent += `Cat making sound:\n`;
+            gato.hacerSonido();
+        }
+
+        function runSobrescrituraMetodos() {
+            const output = document.getElementById('output-sobrescritura-metodos');
+            output.textContent = ''; // Limpiar salida anterior
+
+            class Animal {
+                hacerSonido() {
+                    output.textContent += 'Generic sound\n';
+                }
+            }
+
+            class Perro extends Animal {
+                hacerSonido() {
+                    output.textContent += 'Wow\n';
+                }
+            }
+
+            const perro = new Perro();
+            output.textContent += `Dog making sound:\n`;
+            perro.hacerSonido();
+        }
+    </script>
+</body>
+
+</html>

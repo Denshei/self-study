@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP in Our Codes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            /* Celeste pastel background color */
+        }
+
+        header {
+            background-color: #b2ebf2;
+            /* Pastel celeste color */
+            color: #004d40;
+            /* Dark text color for contrast */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: #004d40;
+            /* Dark text color */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .poo-element {
+            background-color: #b2ebf2;
+            /* Pastel celeste color */
+            padding: 20px;
+            border: 2px solid #80deea;
+            /* Lighter pastel celeste color */
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+            color: #004d40;
+            /* Dark text color */
+            font-weight: bold;
+            text-decoration: none;
+            /* Remove underline */
+            display: block;
+            /* Ensures the link occupies the entire container area */
+            font-size: 1.1rem;
+            /* Adjust text size if needed */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .poo-element:hover {
+            background-color: #80deea;
+            /* Lighter pastel celeste color */
+            color: #00363a;
+            /* Darker text color */
+        }
+
+        footer {
+            background-color: #b2ebf2;
+            /* Pastel celeste color */
+            color: #004d40;
+            /* Dark text color */
+            border-top: 1px solid #80deea;
+            /* Lighter pastel celeste color */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animation for the text introducing the creators */
+        .presenters-text {
+            opacity: 0;
+            /* Initially invisible */
+            animation: fadeIn 2s ease-in-out forwards;
+            /* Fade-in animation on load */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="text-center py-4">
+        <h1>OOP: Learn More and Apply It</h1>
+    </header>
+
+    <div class="container-fluid">
+        <!-- First row: Introductory text -->
+        <div class="row my-4">
+            <div class="col-md-12 text-center">
+                <p class="intro-text small-text">
+                    <strong>What is OOP?</strong>
+                </p>
+                <p class="intro-text small-text">
+                    Object-Oriented Programming (OOP) is a great way to organize software to make it easier to understand and work with.
+                </p>
+                <p class="intro-text small-text">
+                    Instead of seeing the program as a series of steps, OOP breaks it down into <strong>objects</strong> that represent real-world things.
+                </p>
+                <p class="intro-text small-text">
+                    Imagine you’re building a Lego house. Each Lego piece is like an object: it has its own characteristics and can do certain things. In OOP, we use objects to represent different parts of our program, making the code more organized and easier to manage.
+                </p>
+                <p class="intro-text small-text">
+                    <strong>Don’t stay in doubt!</strong> Click on the blocks below to discover more about each part of OOP. Each click is a new piece of the puzzle that will help you become a master of programming!
+                </p>
+            </div>
+        </div>
+
+        <!-- Second row: OOP elements -->
+        <div class="row text-center my-4">
+            <div class="col-md-3">
+                <a href="abstraccion.html" class="poo-element">Abstraction</a>
+            </div>
+            <div class="col-md-3">
+                <a href="Polimorfismo.html" class="poo-element">Polymorphism</a>
+            </div>
+            <div class="col-md-3">
+                <a href="herencia.html" class="poo-element">Inheritance</a>
+            </div>
+            <div class="col-md-3">
+                <a href="encapsulamiento.html" class="poo-element">Encapsulation</a>
+            </div>
+        </div>
+
+        <!-- New row: Names -->
+        <div class="row text-center my-4">
+            <div class="col-md-12">
+                <p class="intro-text small-text">
+                    Discover the creators behind this incredible page designed to teach you about object-oriented programming. <br>
+                    -Denshel David Merida Quispe<br>
+                    -Diego Jhamil Escalante Cordero<br>
+                    -Daysi Camila España Taboada<br>
+                    -Massiel Vela Ñucra
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <div class="container">
+            <p class="mb-0" style="font-size: 1rem; font-weight: 300;">
+                Designed for the Technical English 3 course
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

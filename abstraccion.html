@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstraction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e8f5e9;
+            /* pastel green */
+            color: #2e7d32;
+            /* darker green for text */
+            font-family: Arial, sans-serif;
+        }
+
+        header h1 {
+            color: #2e7d32;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .intro-box {
+            background-color: #c8e6c9;
+            /* lighter pastel green */
+            border: 1px solid #a5d6a7;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: slideIn 1s ease-out;
+        }
+
+        .btn-light {
+            background-color: #a5d6a7;
+            color: #2e7d32;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-light:hover {
+            background-color: #81c784;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="text-center my-4">
+        <h1>Abstraction</h1>
+    </header>
+
+    <div class="container text-center">
+        <div class="intro-box">
+            <p>
+                Abstraction is like a way to simplify complex things by focusing only on what is most important. Imagine you are building a toy and only care about its design and how it works, without worrying about every small piece it consists of. That's what abstraction does in programming: it helps us focus on the essentials and set aside details that we don't need at the moment.
+            </p>
+            <p>
+                In programming, we use abstraction to create components that perform specific tasks without needing to know how they work internally. For example, when we use a calculator in an application, we only see the buttons and the screen, but we don’t need to know how the internal calculations are done. This makes it easier to work with complex systems.
+            </p>
+            <p>
+                We also use abstraction in our daily lives. For example, when we think of "fruit," we don't care if it's an apple or an orange, we only care that it is something we eat. This way, we can treat different fruits similarly without thinking about each specific type.
+            </p>
+            <p>
+                Next, we will look at some simple examples to better understand how abstraction helps us handle and simplify complex information.
+            </p>
+
+            <a href="slide-abstraction.html" class="btn btn-light" id="exampleButton">See Examples</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
